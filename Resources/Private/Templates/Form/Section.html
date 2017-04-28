@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<fieldset id="{section.uniqueIdentifier}" {f:if(condition: section.properties.sectionClassAttribute, then:' class="{section.properties.sectionClassAttribute}"')}>
+<f:if condition="{section.label}">
+    <legend>
+        {f:translate(id: 'form.section.{section.identifier}', source: '{section.renderingOptions.translationSource}', package: '{section.renderingOptions.translationPackage}', value: '{section.label}')}
+    </legend>
+</f:if>
+<f:for each="{section.elements}" as="element">
+    <form:renderRenderable renderable="{element}"/>
+</f:for>
+</fieldset>
+</body>
+</html>

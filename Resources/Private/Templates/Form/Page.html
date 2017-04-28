@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<fieldset {f:if(condition: page.renderingOptions.pageClassAttribute, then:' class="{page.renderingOptions.pageClassAttribute}"')}>
+<f:if condition="{page.label}">
+    <legend>
+        {f:translate(id: 'form.page.{page.identifier}', source: '{page.renderingOptions.translationSource}',package: '{page.renderingOptions.translationPackage}', value: '{page.label}')}
+    </legend>
+</f:if>
+<f:for each="{page.elements}" as="element">
+    <form:renderRenderable renderable="{element}"/>
+</f:for>
+</fieldset>
+</body>
+</html>

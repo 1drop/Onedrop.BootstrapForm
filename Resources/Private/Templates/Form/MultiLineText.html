@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<f:layout name="Neos.Form:Field"/>
+<f:section name="field">
+    <f:form.textarea property="{element.identifier}"
+                     id="{element.uniqueIdentifier}"
+                     class="{element.properties.elementClassAttribute}"
+                     additionalAttributes="{required: element.required}"
+                     rows="{element.properties.rows}"
+                     cols="{element.properties.cols}"
+                     errorClass="{element.properties.elementErrorClassAttribute}"
+                     placeholder="{f:translate(id: 'form.placeholder.{element.identifier}', source: '{element.renderingOptions.translationSource}', package: '{element.renderingOptions.translationPackage}', value: '{element.properties.placeholder}')}"/>
+</f:section>
+</body>
+</html>

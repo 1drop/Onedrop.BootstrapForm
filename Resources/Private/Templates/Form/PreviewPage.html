@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:media="http://typo3.org/ns/Neos/Media/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<fieldset>
+    <f:if condition="{page.label}">
+        <legend>{page.label}</legend>
+    </f:if>
+    <output>
+        <table>
+            <tr>
+                <th style="width: 170px"><f:translate id="field" package="Onedrop.BootstrapForm" source="Form"/></th>
+                <th><f:translate id="value" package="Onedrop.BootstrapForm" source="Form"/></th>
+            </tr>
+            <form:renderValues renderable="{page.rootForm}">
+                <tr>
+                    <th>{formValue.element.label}</th>
+                    <td>
+                        <f:if condition="{formValue.value}">
+                            <f:then>
+                                <f:if condition="{0: formValue.element.type} == {0: 'Neos.Form:ImageUpload'}">
+                                    <f:then>
+                                        <a href="{media:uri.image(image: formValue.value, maximumWidth: 600)}"
+                                           rel="lightbox">
+                                            <media:image image="{formValue.value}"
+                                                         maximumWidth="100"
+                                                         alt="{formValue.processedValue}"/>
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{formValue.isMultiValue}">
+                                            <f:then>
+                                                {formValue.processedValue -> f:debug()}
+                                                <ul>
+                                                    <f:for each="{formValue.processedValue}" as="value">
+                                                        <li>{value}</li>
+                                                    </f:for>
+                                                </ul>
+                                            </f:then>
+                                            <f:else>
+                                                {formValue.processedValue}
+                                            </f:else>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                -
+                            </f:else>
+                        </f:if>
+                    </td>
+                </tr>
+            </form:renderValues>
+        </table>
+    </output>
+</fieldset>
+</body>
+</html>

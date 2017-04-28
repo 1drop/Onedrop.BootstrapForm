@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<f:if condition="{element.label}">
+    <h2>{element.label}</h2>
+</f:if>
+<p{f:if(condition: element.properties.elementClassAttribute, then: 'class="{element.properties.elementClassAttribute}"')}>
+    <f:format.raw>{element.properties.text -> f:format.nl2br()}</f:format.raw>
+</p>
+</body>
+</html>

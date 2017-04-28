@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<form:form action="index"
+           object="{form}"
+           method="post"
+           class="{form.renderingOptions.formClassAttribute}"
+           id="{form.identifier}"
+           enctype="multipart/form-data">
+    <div class="row">
+        <form:renderRenderable renderable="{form.currentPage}"/>
+        <div class="{form.renderingOptions.actionClassAttribute}">
+            <div class="actions">
+                <f:render partial="Neos.Form:Form/Navigation" arguments="{form: form}"/>
+            </div>
+        </div>
+    </div>
+</form:form>
+</body>
+</html>

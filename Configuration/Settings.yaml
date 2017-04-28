@@ -1,0 +1,104 @@
+Neos:
+  Form:
+    presets:
+      bootstrap:
+        title: 'Bootstrap 4'
+        parentPreset: default
+        formElementTypes:
+          'Neos.Form:Base':
+            renderingOptions:
+              templatePathPattern: 'resource://Onedrop.BootstrapForm/Private/Templates/Form/{@type}.html'
+              partialPathPattern: 'resource://Onedrop.BootstrapForm/Private/Templates/Form/Partials/{@type}.html'
+              layoutPathPattern: 'resource://Onedrop.BootstrapForm/Private/Templates/Form/Layouts/{@type}.html'
+              translationPackage: Onedrop.BootstrapForm
+              translationSource: Form
+          'Neos.Form:Form':
+            renderingOptions:
+              formClassAttribute: 'form'
+              formPrevButtonClassAttribute: 'btn btn-secondary'
+              formNextButtonClassAttribute: 'btn btn-primary'
+              formSubmitButtonClassAttribute: 'btn btn-primary'
+              containerClassAttribute: 'col-12'
+              actionClassAttribute: 'col-12'
+          'Neos.Form:FormElement':
+            properties:
+              labelClassAttribute: 'col-sm-2 control-label'
+              containerClassAttribute: 'form-group row'
+              containerInnerClassAttribute: 'col-sm-10'
+              elementClassAttribute: 'form-control'
+              elementErrorClassAttribute: 'has-error'
+              elementType: 'text'
+          'Neos.Form:Page':
+            renderingOptions:
+              pageClassAttribute: 'col-12'
+          'Neos.Form:Section':
+            properties:
+              sectionClassAttribute: 'col-12'
+          'Neos.Form:MultiLineText':
+            properties:
+              elementClassAttribute: 'form-control'
+          'Neos.Form:SingleSelectRadiobuttons':
+            properties:
+              elementListClassAttrbiute: 'list-unstyled'
+          'Neos.Form:Password':
+            properties:
+              elementType: 'password'
+          'Neos.Form:Email':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'email'
+          'Neos.Form:Color':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'color'
+          'Neos.Form:Time':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'time'
+          'Neos.Form:Date':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'date'
+          'Neos.Form:DatetimeLocal':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'datetime-local'
+          'Neos.Form:Month':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'month'
+          'Neos.Form:Week':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'week'
+          'Neos.Form:Number':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'number'
+          'Neos.Form:Search':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'search'
+          'Neos.Form:Tel':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'tel'
+          'Neos.Form:Url':
+            superTypes:
+              'Neos.Form:SingleLineText': true
+            properties:
+              elementType: 'url'
+  Neos:
+    fusion:
+      autoInclude:
+        Onedrop.BootstrapForm: true

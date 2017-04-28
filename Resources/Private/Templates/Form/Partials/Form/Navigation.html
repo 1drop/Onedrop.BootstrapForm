@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<nav class="form-navigation">
+    <ul class="list-unstyled row justify-content-between">
+        <f:if condition="{form.previousPage}">
+            <li class="previous col-6 mr-auto text-left">
+                <f:form.button name="__currentPage" value="{form.previousPage.index}" formnovalidate="formnovalidate"
+                               class="{form.renderingOptions.formPrevButtonClassAttribute}">
+                    <f:if condition="{form.renderingOptions.prevButtonLabel}">
+                        <f:then>
+                            <f:format.raw>{f:translate(id: 'form.prevButton', source:
+                                '{form.renderingOptions.translationSource}', package:
+                                '{form.renderingOptions.translationPackage}', value:
+                                '{form.renderingOptions.prevButtonLabel}')}
+                            </f:format.raw>
+                        </f:then>
+                        <f:else>
+                            Previous
+                        </f:else>
+                    </f:if>
+                </f:form.button>
+            </li>
+        </f:if>
+        <f:if condition="{form.nextPage}">
+            <f:then>
+                <li class="next col-6 ml-auto text-right">
+                    <f:form.button name="__currentPage" value="{form.nextPage.index}"
+                                   class="{form.renderingOptions.formNextButtonClassAttribute}">
+                        <f:if condition="{form.renderingOptions.nextButtonLabel}">
+                            <f:then>
+                                <f:format.raw>{f:translate(id: 'form.nextButton', source:
+                                    '{form.renderingOptions.translationSource}', package:
+                                    '{form.renderingOptions.translationPackage}', value:
+                                    '{form.renderingOptions.nextButtonLabel}')}
+                                </f:format.raw>
+                            </f:then>
+                            <f:else>
+                                Next
+                            </f:else>
+                        </f:if>
+                    </f:form.button>
+                </li>
+            </f:then>
+            <f:else>
+                <li class="next col-6 submit ml-auto text-right">
+                    <f:form.button name="__currentPage" value="{form.pages -> f:count()}"
+                                   class="{form.renderingOptions.formSubmitButtonClassAttribute}">
+                        <f:if condition="{form.renderingOptions.submitButtonLabel}">
+                            <f:then>
+                                <f:format.raw>{f:translate(id: 'form.submitButton', source:
+                                    '{form.renderingOptions.translationSource}', package:
+                                    '{form.renderingOptions.translationPackage}', value:
+                                    '{form.renderingOptions.submitButtonLabel}')}
+                                </f:format.raw>
+                            </f:then>
+                            <f:else>
+                                Submit
+                            </f:else>
+                        </f:if>
+                    </f:form.button>
+                </li>
+            </f:else>
+        </f:if>
+    </ul>
+</nav>
+</body>
+</html>

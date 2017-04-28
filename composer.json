@@ -1,0 +1,15 @@
+{
+    "type": "neos-package",
+    "license": "MIT",
+    "name": "onedrop/bootstrapform",
+    "description": "Plugin providing a bootstrap 4 form preset",
+    "require": {
+        "neos/flow": "^4.0",
+        "neos/neos": "^3.0"
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Onedrop.BootstrapForm"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<f:form.validationResults for="{element.identifier}">
+    <div class="{element.properties.containerClassAttribute} {f:if(condition: validationResults.flattenedErrors, then: element.properties.elementErrorClassAttribute)}"<f:if condition="{element.rootForm.renderingOptions.previewMode}"> data-element="{form:form.formElementRootlinePath(renderable:element)}"</f:if>>
+    <label class="{element.properties.labelClassAttribute}" for="{element.uniqueIdentifier}">
+        <f:translate id="form.label.{element.identifier}"
+                     source="{element.renderingOptions.translationSource}"
+                     package="{element.renderingOptions.translationPackage}"
+                     value="{element.label -> f:format.nl2br()}"/>
+        <f:if condition="{element.required}">
+            <f:render partial="Onedrop.BootstrapForm:Field/Required"/>
+        </f:if>
+    </label>
+    <div class="{element.properties.containerInnerClassAttribute}">
+        <f:render section="field"/>
+        <f:if condition="{validationResults.flattenedErrors}">
+            <span class="help-block">
+                <f:for each="{validationResults.errors}" as="error">
+                    {error -> f:translate(id: error.code, arguments: error.arguments, package: '{element.renderingOptions.translationPackage}', source: 'ValidationErrors')}
+                    <br/>
+                </f:for>
+            </span>
+        </f:if>
+    </div>
+    </div>
+</f:form.validationResults>
+</body>
+</html>

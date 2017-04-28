@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Onedrop.BootstrapForm" source-language="en" datatype="plaintext">
+		<body>
+            <trans-unit id="field" xml:space="preserve">
+                <source>Feld</source>
+            </trans-unit>
+            <trans-unit id="value" xml:space="preserve">
+                <source>Wert</source>
+            </trans-unit>
+            <trans-unit id="cancel" xml:space="preserve">
+                <source>Abbrechen</source>
+            </trans-unit>
+            <trans-unit id="replaceFile" xml:space="preserve">
+                <source>Datei ersetzen</source>
+            </trans-unit>
+            <trans-unit id="replaceImage" xml:space="preserve">
+                <source>Bild ersetzen</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

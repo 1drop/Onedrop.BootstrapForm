@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<f:layout name="Neos.Form:Field"/>
+<f:section name="field">
+    <f:form.select property="{element.identifier}"
+                   id="{element.uniqueIdentifier}"
+                   class="{element.properties.elementClassAttribute}"
+                   options="{element.properties.options}"
+                   multiple="multiple"
+                   errorClass="{element.properties.elementErrorClassAttribute}"/>
+</f:section>
+</body>
+</html>

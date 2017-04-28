@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
+<body>
+<f:form.validationResults for="{element.identifier}">
+    <div class="{element.properties.containerClassAttribute}{f:if(condition: validationResults.flattenedErrors, then: element.properties.elementErrorClassAttribute)}"<f:if condition="{element.rootForm.renderingOptions.previewMode}"> data-element="{form:form.formElementRootlinePath(renderable:element)}"</f:if>>
+    <div class="{element.properties.containerInnerClassAttribute}">
+        <div class="checkbox">
+            <label for="{element.uniqueIdentifier}">
+                <f:if condition="{element.required}">
+                    <f:then>
+                        <f:form.checkbox property="{element.identifier}"
+                                         id="{element.uniqueIdentifier}"
+                                         value="{element.properties.value}"
+                                         errorClass="{element.properties.elementErrorClassAttribute}"
+                                         additionalAttributes="{required: element.required}"/>
+                    </f:then>
+                    <f:else>
+                        <f:form.checkbox property="{element.identifier}"
+                                         id="{element.uniqueIdentifier}"
+                                         value="{element.properties.value}"
+                                         errorClass="{element.properties.elementErrorClassAttribute}"/>
+                    </f:else>
+                </f:if>
+                {element.label -> f:format.nl2br()}
+            </label>
+        </div>
+    </div>
+    </div>
+</f:form.validationResults>
+</body>
+</html>
