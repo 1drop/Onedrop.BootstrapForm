@@ -1,3 +1,4 @@
+
 Neos:
   Form:
     presets:
@@ -10,94 +11,94 @@ Neos:
               templatePathPattern: 'resource://Onedrop.BootstrapForm/Private/Templates/Form/{@type}.html'
               partialPathPattern: 'resource://Onedrop.BootstrapForm/Private/Templates/Form/Partials/{@type}.html'
               layoutPathPattern: 'resource://Onedrop.BootstrapForm/Private/Templates/Form/Layouts/{@type}.html'
-              translationPackage: Onedrop.BootstrapForm
               translationSource: Form
+              validationErrorTranslationPackage: Onedrop.BootstrapForm
           'Neos.Form:Form':
             renderingOptions:
-              formClassAttribute: 'form'
+              formClassAttribute: form
               formPrevButtonClassAttribute: 'btn btn-secondary'
               formNextButtonClassAttribute: 'btn btn-primary'
               formSubmitButtonClassAttribute: 'btn btn-primary'
-              containerClassAttribute: 'col-12'
-              actionClassAttribute: 'col-12'
+              containerClassAttribute: col-12
+              actionClassAttribute: col-12
           'Neos.Form:FormElement':
             properties:
               labelClassAttribute: 'col-sm-2 control-label'
               containerClassAttribute: 'form-group row'
-              containerInnerClassAttribute: 'col-sm-10'
-              elementClassAttribute: 'form-control'
-              elementErrorClassAttribute: 'has-error'
-              elementType: 'text'
+              containerInnerClassAttribute: col-sm-10
+              elementClassAttribute: form-control
+              elementErrorClassAttribute: has-error
+              elementType: text
           'Neos.Form:Page':
             renderingOptions:
-              pageClassAttribute: 'col-12'
+              pageClassAttribute: col-12
           'Neos.Form:Section':
             properties:
-              sectionClassAttribute: 'col-12'
+              sectionClassAttribute: col-12
           'Neos.Form:MultiLineText':
             properties:
-              elementClassAttribute: 'form-control'
+              elementClassAttribute: form-control
           'Neos.Form:SingleSelectRadiobuttons':
             properties:
-              elementListClassAttrbiute: 'list-unstyled'
+              elementListClassAttrbiute: list-unstyled
           'Neos.Form:Password':
             properties:
-              elementType: 'password'
+              elementType: password
           'Neos.Form:Email':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'email'
+              elementType: email
           'Neos.Form:Color':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'color'
+              elementType: color
           'Neos.Form:Time':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'time'
+              elementType: time
           'Neos.Form:Date':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'date'
+              elementType: date
           'Neos.Form:DatetimeLocal':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'datetime-local'
+              elementType: datetime-local
           'Neos.Form:Month':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'month'
+              elementType: month
           'Neos.Form:Week':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'week'
+              elementType: week
           'Neos.Form:Number':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'number'
+              elementType: number
           'Neos.Form:Search':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'search'
+              elementType: search
           'Neos.Form:Tel':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'tel'
+              elementType: tel
           'Neos.Form:Url':
             superTypes:
               'Neos.Form:SingleLineText': true
             properties:
-              elementType: 'url'
+              elementType: url
   Neos:
     fusion:
       autoInclude:
