@@ -8,7 +8,8 @@
                       property="{element.identifier}"
                       id="{element.uniqueIdentifier}"
                       class="{element.properties.elementClassAttribute}"
-                      placeholder="{f:translate(id: 'form.placeholder.{element.identifier}', source: '{element.renderingOptions.translationSource}', package: '{element.renderingOptions.translationPackage}', value: '{element.properties.placeholder}')}"
+                      placeholder="{element -> form:translateElementProperty(property: 'placeholder')}"
+                      maxlength="{element.properties.maxlength}"
                       required="{element.required}"/>
 </f:section>
 </body>

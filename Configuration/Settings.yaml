@@ -23,9 +23,9 @@ Neos:
               actionClassAttribute: col-12
           'Neos.Form:FormElement':
             properties:
-              labelClassAttribute: 'col-sm-2 control-label'
-              containerClassAttribute: 'form-group row'
-              containerInnerClassAttribute: col-sm-10
+              labelClassAttribute: ''
+              containerClassAttribute: 'form-group'
+              containerInnerClassAttribute: ''
               elementClassAttribute: form-control
               elementErrorClassAttribute: has-error
               elementType: text

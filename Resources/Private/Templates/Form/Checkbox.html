@@ -4,7 +4,7 @@
       xmlns:form="http://typo3.org/ns/Neos/Form/ViewHelpers"
       xmlns:neos="http://typo3.org/ns/Neos/Neos/ViewHelpers">
 <body>
-<f:form.validationResults for="{element.identifier}">
+<f:validation.results for="{element.identifier}">
     <div class="{element.properties.containerClassAttribute}{f:if(condition: validationResults.flattenedErrors, then: element.properties.elementErrorClassAttribute)}"<f:if condition="{element.rootForm.renderingOptions.previewMode}"> data-element="{form:form.formElementRootlinePath(renderable:element)}"</f:if>>
     <div class="{element.properties.containerInnerClassAttribute}">
         <div class="checkbox">
@@ -29,6 +29,6 @@
         </div>
     </div>
     </div>
-</f:form.validationResults>
+</f:validation.results>
 </body>
 </html>
